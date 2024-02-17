@@ -17,10 +17,19 @@ jobs:
     - name: Set Gradle home
       run: export GRADLE_USER_HOME=`pwd`/.gradle
 
+    - name: Cache Java JDK
+      id: cache-jdk
+      uses: https://code.forgejo.org/actions/cache@v3
+      with:
+        path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.10-7/x64
+        key: ${{ runner.os }}-jdk-17
+        restore-keys: ${{ runner.os }}-jdk-
+
     - name: Checkout sources
       uses: https://code.forgejo.org/actions/checkout@v4
 
     - name: Set up JDK 17
+      if: ${{ steps.cache-jdk.outputs.cache-hit != 'true' }}
       uses: https://github.com/actions/setup-java@v4
       with:
         java-version: '17'
@@ -32,8 +41,6 @@ jobs:
     - uses: actions/cache@v3
       with:
         path: |
-          /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk
-          ~/.m2/toolchains.xml
           ~/.gradle/caches
           ~/.gradle/wrapper      
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
