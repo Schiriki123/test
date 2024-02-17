@@ -9,6 +9,6 @@ jobs:
     steps:
       - name: test
         run: |
-          echo ls
+          echo $ls
           export GRADLE_USER_HOME=`pwd`/.gradle
 
