@@ -9,6 +9,6 @@ jobs:
     - name: Checkout sources
       uses: https://code.forgejo.org/actions/checkout@v4
     - name: Setup Gradle
-      uses: https://gitea.com/actions/setup-gradle@v3
+      uses: https://github.com/gradle/actions/setup-gradle@v3
     - name: Build with Gradle
       run: ./gradlew build
