@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: list
-        run: ls -al /workspace/Schiriki
+        run: ls -al /workspace/Schiriki/GradleTest
 
       - name: test
         run: |
