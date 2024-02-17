@@ -1,8 +1,14 @@
 on: ["push"]
 
 jobs:
+  import:
+    runs-on: docker
+    steps:
+      - uses: https://code.forgejo.org/actions/checkout@v4
   test:
-    runs-on: gradle:alpine
+    runs-on: docker
+    container:
+      image: gradle:alpine
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v4
       - name: list
