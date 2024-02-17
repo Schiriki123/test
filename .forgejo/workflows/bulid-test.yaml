@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: list
-        run: ls -al
+        run: ls -al /workspace
 
       - name: test
         run: |
