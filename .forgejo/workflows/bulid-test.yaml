@@ -24,8 +24,8 @@ jobs:
         distribution: 'temurin'
         cache: 'gradle'
         cache-dependency-path: | # optional
-          sub-project/*.gradle*
-          sub-project/**/gradle-wrapper.properties
+          ./*.gradle*
+          ./**/gradle-wrapper.properties
 
     - name: Buld project
       run: ./gradlew build --no-daemon
