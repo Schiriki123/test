@@ -1,0 +1,12 @@
+on: ["push"]
+
+jobs:
+  test:
+    runs-on: docker
+    container:
+      image: gradle:alpine
+
+    steps:
+      - name: test
+        run: ls
+
