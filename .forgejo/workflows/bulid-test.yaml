@@ -24,7 +24,7 @@ jobs:
     # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
-      uses: https://github.com/gradle/actions/setup-gradle@3
+      uses: https://github.com/gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
@@ -32,7 +32,7 @@ jobs:
     - name: Stop Gradle daemon
       run: gradle --stop
 
-    - uses: actions/cache@v3
+    - uses: https://code.forgejo.org/actions/cache@v3
       with:
         path: |
           ~/.gradle/caches
