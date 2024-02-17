@@ -10,4 +10,4 @@ jobs:
       - name: test
         run: |
           export GRADLE_USER_HOME=`pwd`/.gradle
-          cat $HOME/settings.gradle
+          cat ./settings.gradle
