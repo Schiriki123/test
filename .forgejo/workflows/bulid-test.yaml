@@ -7,7 +7,7 @@ jobs:
       image: gradle:alpine
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: https://code.forgejo.org/actions/checkout@v3
       - name: list
         run: ls -al /workspace/Schiriki/GradleTest
 
