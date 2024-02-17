@@ -8,5 +8,7 @@ jobs:
 
     steps:
       - name: test
-        run: ls
+        run: |
+          ls
+          export GRADLE_USER_HOME=`pwd`/.gradle
 
