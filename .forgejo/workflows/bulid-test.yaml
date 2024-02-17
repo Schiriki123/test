@@ -32,6 +32,7 @@ jobs:
     - uses: actions/cache@v3
       with:
         path: |
+          /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk
           ~/.m2/toolchains.xml
           ~/.gradle/caches
           ~/.gradle/wrapper      
