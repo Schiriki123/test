@@ -10,7 +10,6 @@ jobs:
     container:
       image: gradle:alpine
     steps:
-      - uses: https://code.forgejo.org/actions/checkout@v4
       - name: list
         run: ls -al /workspace/Schiriki/GradleTest
 
