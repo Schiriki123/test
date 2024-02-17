@@ -1,10 +1,6 @@
 on: ["push"]
 
 jobs:
-  import:
-    runs-on: docker
-    steps:
-      - uses: https://code.forgejo.org/actions/checkout@v4
   test:
     runs-on: docker
     container:
@@ -12,6 +8,10 @@ jobs:
     steps:
       - name: list
         run: ls -al /workspace/Schiriki/GradleTest
+
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
 
       - name: test
         run: |
