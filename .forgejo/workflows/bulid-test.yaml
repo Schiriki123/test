@@ -4,7 +4,7 @@ jobs:
   test:
     runs-on: docker
     container:
-      image: gradle:alpine
+      image: ubuntu:latest
 
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v3
