@@ -3,9 +3,6 @@ on: ["push"]
 jobs:
   test:
     runs-on: docker
-    container:
-      image: gradle:alpine
-
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v4
       - name: list
