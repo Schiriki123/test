@@ -14,7 +14,9 @@ jobs:
       contents: read
 
     steps:
-    - uses: https://code.forgejo.org/actions/checkout@v4
+    - name: Checkout sources
+      uses: https://code.forgejo.org/actions/checkout@v4
+
     - name: Set up JDK 17
       uses: https://github.com/actions/setup-java@v4
       with:
@@ -29,10 +31,8 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
-    - name: Stop Gradle daemon
-      run: gradle --stop
-
-    - uses: https://code.forgejo.org/actions/cache@v3
+    - name: Cache files
+      uses: https://code.forgejo.org/actions/cache@v3
       with:
         path: |
           ~/.gradle/caches
